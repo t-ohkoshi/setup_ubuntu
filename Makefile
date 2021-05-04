@@ -15,3 +15,7 @@ vscode:
 
 docker:
 	./dockerinstall
+
+developer:
+	./setupzsh
+	./deviteminstall
