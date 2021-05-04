@@ -1,3 +1,4 @@
+#!/bin/bash
 apt-get update
 apt-get install -y git wget curl vim zsh
-apt-get install -y peco silversearcher-ag
+apt-get install -y peco silversearcher-agls
