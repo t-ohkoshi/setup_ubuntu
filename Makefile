@@ -1,0 +1,4 @@
+all:
+	./choromeinstall
+	./dockerinstall
+	./vscodeinstall
