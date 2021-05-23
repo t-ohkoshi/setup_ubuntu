@@ -21,4 +21,4 @@ developer:
 	./deviteminstall
 
 node:
-	./installnodenv
+	./nodenvinstall
