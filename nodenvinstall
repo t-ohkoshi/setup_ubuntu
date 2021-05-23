@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# install nodenv
+git clone https://github.com/nodenv/nodenv.git ~/.nodenv
+echo -e "\n" | tee -a  ~/.zprezto/runcoms/zshrc
+echo 'export PATH="$HOME/.nodenv/bin:$PATH"' | tee -a  ~/.zprezto/runcoms/zshrc
+sudo echo 'eval "$(nodenv init -)"' | tee -a ~/.zprezto/runcoms/zshrc
+
+# install node-build
+git clone https://github.com/nodenv/node-build.git $(nodenv root)/plugins/node-build
+
+# run : source ~/.zshrc
