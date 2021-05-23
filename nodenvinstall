@@ -2,8 +2,10 @@
 
 # install nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
-echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(nodenv init -)"' >> ~/.zshrc
+tee ~/.zshrc -a <<EOF
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)
+EOF
 source ~/.zshrc
 
 # install node-build
