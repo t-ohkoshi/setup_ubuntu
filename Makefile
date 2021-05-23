@@ -19,3 +19,6 @@ docker:
 developer:
 	./setupzsh
 	./deviteminstall
+
+node:
+	./installnodenv
