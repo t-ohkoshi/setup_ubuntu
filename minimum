@@ -1,3 +1,23 @@
 #!/bin/bash
 apt-get update
 apt-get install -y vim wget curl
+
+tee ~/.vimrc  <<EOF
+syntax on
+set number
+set backspace=indent,eol,start
+
+" set visual
+set cursorline
+set virtualedit=onemore
+
+set t_Co=256
+set background=dark
+
+set encoding=utf-8
+set fileencoding=utf8
+set fileencodings=iso-20220-jp,euc-jp,utf-8,ucs-2,cp932,sjis
+set autoindent
+set incsearch
+set ignorecase
+EOF
