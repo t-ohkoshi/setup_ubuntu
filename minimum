@@ -2,6 +2,7 @@
 apt-get update
 apt-get install -y vim wget curl
 
+# set up vimrc
 tee ~/.vimrc  <<EOF
 syntax on
 set number
@@ -21,3 +22,6 @@ set autoindent
 set incsearch
 set ignorecase
 EOF
+
+# caps -> ctrl
+sed -i -e 's/XKBOPTIONS=""/XKBOPTIONS="ctrl:nocaps"/g' /etc/default/keyboard
