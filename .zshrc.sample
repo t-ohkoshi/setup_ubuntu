@@ -25,7 +25,7 @@ prompt pure
 # zsh-completions
 fpath=(path/to/zsh-completions/src $fpath)
 
-# peco
+# peco (use tac in ubuntu)
 function peco-history-selection() {
     BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
