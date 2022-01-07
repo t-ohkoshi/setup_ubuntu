@@ -1,4 +1,4 @@
 #!/bin/bash
 
-apt-get install -y openssh-server
+apt-get install -y openssh-server tmate
 sed -i -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
