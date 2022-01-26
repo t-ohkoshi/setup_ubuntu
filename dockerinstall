@@ -14,7 +14,7 @@ fi
 
 if ! command -v docker-compose &> /dev/null; then
     # https://docs.docker.jp/compose/install.html#linux
-    curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    curl -L https://github.com/docker/compose/releases/download/2.2.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
     echo "install finish docker-compose"
 else
