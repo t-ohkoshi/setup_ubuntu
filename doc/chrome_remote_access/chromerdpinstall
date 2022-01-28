@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if command -v google-chrome &> /dev/null; then
+    mkdir ./tmp && cd ./tmp
+    apt-get update
+    curl -O https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+    apt-get install -y ./chrome-remote-desktop_current_amd64.deb
+    cd ../ && rm -rf ./tmp
+    echo "installed chrome-remote-desktop"
+else
+    echo "not install google-chrome"
+fi
