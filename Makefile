@@ -1,24 +1,24 @@
 all:
 	./minimum
-	./choromeinstall
-	./dockerinstall
-	./vscodeinstall
+	./chorome-install
+	./docker-install
+	./vscode-install
 
 minimum:
 	./minimum
 
 chorome:
-	./choromeinstall
+	./chorome-install
 
 vscode:
-	./vscodeinstall
+	./vscode-install
 
 docker:
-	./dockerinstall
+	./docker-install
 
 developer:
 	./setupzsh
-	./deviteminstall
+	./devitem-install
 
 node:
-	./nodenvinstall
+	./nodenv-install
