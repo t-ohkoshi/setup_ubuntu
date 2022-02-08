@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install -y vim wget curl
+apt-get install -y vim wget curl libreadline-dev
 
 # set up vimrc
 tee ~/.vimrc  <<EOF
