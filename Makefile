@@ -17,7 +17,7 @@ docker:
 	./docker-install
 
 developer:
-	./setupzsh
+	./setup-zsh
 	./devitem-install
 
 node:
