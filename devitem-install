@@ -1,4 +1,21 @@
 #!/bin/bash
 apt-get update
-apt-get install -y zsh peco silversearcher-ag
+apt-get install -y zsh peco silversearcher-ag xsel
+
+tee -a ~/.zshrc  <<EOF
+# peco (use tac in ubuntu)
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+# open alias
+alias open='xdg-open'
+
+# clip board alias
+alias pbcopy='xsel --clipboard --input'
+EOF
 
