@@ -16,5 +16,6 @@ bindkey '^R' peco-history-selection
 alias open='xdg-open'
 
 # clip board alias
-alias pbcopy=xsel --clipboard --input'
+alias pbcopy='xsel --clipboard --input'
 EOF
+
