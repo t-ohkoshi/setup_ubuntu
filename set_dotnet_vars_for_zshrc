@@ -1,0 +1,31 @@
+#!/bin/bash
+
+tee -a ~/.zshrc  <<'EOF'
+
+# configuration for hooking shell functions
+autoload -Uz add-zsh-hook
+
+# https://github.com/OmniSharp/omnisharp-vscode/issues/2970#issuecomment-541516806
+function set-dotnet-vars {
+  DOTNET_BASE=$(dotnet --info | grep "Base Path" | awk '{print $3}')
+  echo "DOTNET_BASE: ${DOTNET_BASE}"
+
+  DOTNET_ROOT=$(echo $DOTNET_BASE | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")
+  echo "DOTNET_ROOT: ${DOTNET_ROOT}"
+
+  export MSBuildSDKsPath=${DOTNET_BASE}Sdks/
+  export DOTNET_ROOT=$DOTNET_ROOT
+  export PATH=$DOTNET_ROOT:$PATH
+}
+
+function parpre_omni_sharp() {
+  case $PWD/ in
+    */csharp-project-name/*) set-dotnet-vars;
+  esac
+}
+
+# add-zsh-hook : hook function
+add-zsh-hook chpwd parpre_omni_sharp
+EOF
+
+# run : source ~/.zshrc
