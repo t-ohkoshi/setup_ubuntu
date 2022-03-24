@@ -18,14 +18,17 @@ function set-dotnet-vars {
   export PATH=$DOTNET_ROOT:$PATH
 }
 
-function prepare_omni_sharp() {
-  case $PWD/ in
-    */csharp-project-name/*) set-dotnet-vars;
-  esac
+function parpre_omni_sharp() {
+  if [ -z $DOTNET_BASE ]; then
+    case $PWD/ in
+      */lot-tracer/*) set-dotnet-vars;
+    esac
+  fi
 }
 
 # add-zsh-hook : hook function
 add-zsh-hook chpwd prepare_omni_sharp
+
 EOF
 
 # run : source ~/.zshrc
