@@ -21,7 +21,7 @@ function set-dotnet-vars {
 function prepare_omni_sharp() {
   if [ -z $DOTNET_BASE ]; then
     case $PWD/ in
-      */lot-tracer/*) set-dotnet-vars;
+      */c-sharp-project/*) set-dotnet-vars;
     esac
   fi
 }
