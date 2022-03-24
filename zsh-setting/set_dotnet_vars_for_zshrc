@@ -21,7 +21,8 @@ function set-dotnet-vars {
 function prepare_omni_sharp() {
   if [ -z $DOTNET_BASE ]; then
     case $PWD/ in
-      */c-sharp-project/*) set-dotnet-vars;
+      */c-sharp-project/*) set-dotnet-vars;;
+      */c-sharp-project2/*) set-dotnet-vars;;
     esac
   fi
 }
