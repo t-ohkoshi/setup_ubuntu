@@ -18,7 +18,7 @@ function set-dotnet-vars {
   export PATH=$DOTNET_ROOT:$PATH
 }
 
-function parpre_omni_sharp() {
+function prepare_omni_sharp() {
   if [ -z $DOTNET_BASE ]; then
     case $PWD/ in
       */lot-tracer/*) set-dotnet-vars;
