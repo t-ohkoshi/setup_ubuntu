@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# used at asdf
+
 tee -a ~/.zshrc  <<'EOF'
 
 # configuration for hooking shell functions
