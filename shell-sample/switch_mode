@@ -1,0 +1,38 @@
+#!/bin/bash
+
+Only="only"
+Join="join A"
+Mode=$Only
+while : ;do
+  # cycle 1
+  status1=$(cat /home/t-ohkoshi/desktop/dev/tmp/mode)
+  sleep 0.2
+
+  # cycle 2
+  status2=$(cat /home/t-ohkoshi/desktop/dev/tmp/mode)
+  sleep 0.2
+
+  # cycle 3
+  status3=$(cat /home/t-ohkoshi/desktop/dev/tmp/mode)
+  sleep 0.2
+
+  # sum
+  checkedStatus=$(echo `expr $status1 + $status2 + $status3`)
+
+  if [[ "$Mode" == "only" ]]; then
+    if [[ $checkedStatus -gt 2 ]]; then
+      Mode=$Join
+      echo 'switch join A'
+    else
+      echo 'not switch only'
+    fi
+  else
+    if [[ $checkedStatus -lt -2 ]]; then
+      Mode=$Only
+      echo 'switch Only'
+    else
+      echo 'not switch join A'
+    fi
+  fi
+  sleep 1
+done
