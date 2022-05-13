@@ -19,7 +19,7 @@ alias open='xdg-open'
 alias pbcopy='xsel --clipboard --input'
 
 # remove git branch
-alias remove-branch='git branch --merged|egrep -v '\*|develop|master'|xargs git branch -d'
+alias remove-branch="git branch --merged|egrep -v '\*|develop|master'|xargs git branch -d"
 
 EOF
 
