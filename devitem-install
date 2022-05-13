@@ -17,5 +17,9 @@ alias open='xdg-open'
 
 # clip board alias
 alias pbcopy='xsel --clipboard --input'
+
+# remove git branch
+alias remove-branch='git branch --merged|egrep -v '\*|develop|master'|xargs git branch -d'
+
 EOF
 
