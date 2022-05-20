@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# get backup
+cp /etc/postgresql/13/main/postgresql.conf /var/shinmei-remote-maintenance/backups/postgresql.conf
+
+# change postgres log settings
+sed -i -e "/^ *#log_destination = 'stderr'/c\log_destination = 'stderr'		# Valid values are combinations of" /etc/postgresql/13/main/postgresql.conf
+sed -i -e "/^ *#logging_collector = off/c\logging_collector = on			# Enable capturing of stderr and csvlog" /etc/postgresql/13/main/postgresql.conf
+sed -i -e "/^ *#log_rotation_age = 1d/c\log_rotation_age = 1d			# Automatic rotation of logfiles will" /etc/postgresql/13/main/postgresql.conf
+sed -i -e "/^ *#log_rotation_size = 10MB/c\log_rotation_size = 10MB		# Automatic rotation of logfiles will" /etc/postgresql/13/main/postgresql.conf
+
+# check log settings
+cat /etc/postgresql/13/main/postgresql.conf |grep "log_destination"
+cat /etc/postgresql/13/main/postgresql.conf |grep "logging_collector"
+cat /etc/postgresql/13/main/postgresql.conf |grep "log_rotation_age"
+cat /etc/postgresql/13/main/postgresql.conf |grep "log_rotation_size"
+
+# restart postgres
+sudo systemctl restart postgresql
