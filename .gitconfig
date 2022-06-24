@@ -1,0 +1,14 @@
+[user]
+  name = t-ohkoshi
+  email = t-ohkoshi@example.com
+[alias]
+  s = status
+[color]
+  ui = auto
+[core]
+  editor = vim
+  pager = less
+  quotepath = false
+  ignorecase=false
+[pull]
+  ff = only
