@@ -6,3 +6,6 @@ rm -f ./packages.microsoft.gpg
 apt-get install apt-transport-https
 apt-get update
 apt-get install code # or code-insiders
+
+# When vscode is installed on jetson, it does not seem to start when I type "code" or click on the icon.
+# It seems that typing "code --no-sandbox" will activate it.
