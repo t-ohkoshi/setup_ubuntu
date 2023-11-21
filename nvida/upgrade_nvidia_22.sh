@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Ubuntu 22.04
+
 # 0. check nvidia driver error
 # https://forums.developer.nvidia.com/t/failed-to-initialize-nvml-driver-library-version-mismatch/190421
 # https://github.com/Pardus-Linux/Packages/blob/master/hardware/graphics/nvidia-xconfig/files/nvidia-bug-report.sh
@@ -20,3 +22,6 @@ apt-get update
 apt-get install -y  nvidia-driver-545
 apt-get install -y  nvidia-utils-545
 apt-get install -y  cuda-toolkit-12-3
+
+# 4. reload driver
+reboot
