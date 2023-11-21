@@ -19,9 +19,14 @@ dpkg -i cuda-keyring_1.0-1_all.deb
 apt-get update
 
 # 3. install driver and
-apt-get install -y  nvidia-driver-545
-apt-get install -y  nvidia-utils-545
-apt-get install -y  cuda-toolkit-12-3
+apt-get install -y nvidia-driver-545
+apt-get install -y nvidia-utils-545
+apt-get install -y cuda-toolkit-12-3
+apt-get install -y nvidia-container-toolkit
 
 # 4. reload driver
 reboot
+
+# 5. settinno-cgroups = false
+vim /etc/nvidia-container-runtime/config.toml
+
